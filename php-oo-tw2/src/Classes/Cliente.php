@@ -27,12 +27,12 @@ class Cliente
         }
     }
 
-    public function __get(string $nomePropriedade)
+    public function __get(string $nomePropriedade): string
     {
         return "Propriedade não existe: ";
     }
 
-    public function __call(string $nomeMetodo, array $argumentosMetodos)
+    public function __call(string $nomeMetodo, array $argumentosMetodos): void
     {
         if ($nomeMetodo === "altera") {
             $this->nome = $argumentosMetodos[0];
@@ -40,7 +40,7 @@ class Cliente
         }
     }
 
-    public function __invoke(bool $status)
+    public function __invoke(bool $status): void
     {
         $this->status = $status;
     }
@@ -53,6 +53,11 @@ class Cliente
     public function __wakeup(): void
     {
         $this->tipo = "serializado";
+    }
+
+    public function __toString(): string
+    {
+        return $this->nome . "," . $this->idade;
     }
 
     public function compra(): void
