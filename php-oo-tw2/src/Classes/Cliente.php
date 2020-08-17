@@ -18,6 +18,20 @@ class Cliente
         $this->idade = $idade;
     }
 
+    public function __set(string $nomePropriedade, string $valorPropriedade)
+    {
+        if ($nomePropriedade === "cpf") {
+            $this->cpf = \str_replace(".", "", $valorPropriedade);
+        } else {
+            $this->$nomePropriedade = $valorPropriedade;
+        }
+    }
+
+    public function __get(string $nomePropriedade)
+    {
+        return "Propriedade não existe: ";
+    }
+
     public function compra(): void
     {
         echo "O cliente {$this->nome} realizou uma compra: ";
