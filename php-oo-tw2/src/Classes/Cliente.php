@@ -32,6 +32,19 @@ class Cliente
         return "Propriedade não existe: ";
     }
 
+    public function __call(string $nomeMetodo, array $argumentosMetodos)
+    {
+        if ($nomeMetodo === "altera") {
+            $this->nome = $argumentosMetodos[0];
+            $this->idade = $argumentosMetodos[1];
+        }
+    }
+
+    public function __invoke(bool $status)
+    {
+        $this->status = $status;
+    }
+
     public function compra(): void
     {
         echo "O cliente {$this->nome} realizou uma compra: ";
