@@ -27,4 +27,9 @@ class Cliente
     {
         $this->nome = $nome;
     }
+
+    public function __destruct()
+    {
+        echo "O obj foi destruido: ";
+    }
 }
