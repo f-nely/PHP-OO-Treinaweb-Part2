@@ -45,6 +45,16 @@ class Cliente
         $this->status = $status;
     }
 
+    public function __sleep(): array
+    {
+        return ["nome" , "idade"];
+    }
+
+    public function __wakeup(): void
+    {
+        $this->tipo = "serializado";
+    }
+
     public function compra(): void
     {
         echo "O cliente {$this->nome} realizou uma compra: ";
