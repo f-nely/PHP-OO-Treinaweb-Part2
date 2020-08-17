@@ -20,4 +20,6 @@ echo "<br>" . $cliSerializado;
 
 $cli2 = unserialize($cliSerializado);
 
+echo "<br>" . $cli;
+
 var_dump($cli, $cli2);
