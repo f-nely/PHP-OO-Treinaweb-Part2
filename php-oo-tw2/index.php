@@ -1,7 +1,13 @@
 <?php
 
-require_once 'src/Classes/Produto.php';
-require_once 'src/Classes/Cliente.php';
+use App\Classes\Cliente;
+use App\Classes\Produto;
+
+require_once 'autoload/autoload-psr4.php';
+
+
+/* require_once 'src/Classes/Produto.php';
+require_once 'src/Classes/Cliente.php'; */
 
 $prod1 = new Produto();
 $prod1->titulo = "Skol";
@@ -15,16 +21,14 @@ $prod2->preco = 1.90;
 
 var_dump($prod1, $prod2);
 
-$cli = new Cliente();
-$cli->nome = "Harris";
-$cli->idade = 40;
+$cli = new Cliente("Victor", "xxxxx-xxxx", 2);
 $cli->endereco = "São Paulo";
-$cli->telefone = "(11) - xxxxx-xxxx";
 $cli->compra();
+
 
 //Instanciando objetos dinamicamente
 
-$nomeClasse = "Produto";
+/*$nomeClasse = "Produto";
 
 $instacia = new $nomeClasse;
 var_dump($instacia);
@@ -35,7 +39,7 @@ $nomeClasse2 = get_class($cli);
 $cli3 = new $nomeClasse2;
 $cli3->nome = "Howard";
 
-var_dump($cli, $cli2, $cli3);
+var_dump($cli, $cli2, $cli3);*/
 
 
 
