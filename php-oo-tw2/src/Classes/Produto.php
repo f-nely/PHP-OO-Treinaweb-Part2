@@ -18,4 +18,9 @@ class Produto
     {
         return $this->codigoBarras;
     }
+
+    public function detalhes(): void
+    {
+        echo "<br>Nome do produto: " . $this->titulo . "<br>";
+    }
 }
