@@ -13,9 +13,9 @@ class Microondas extends Eletrodomesticos
         $this->potencia = $pontencia;
     }
 
-    public function mostra(): void
+    public function detalhes(): void
     {
-        $this->detalhes();
-        echo "<br>Potencia: " . $this->potencia;
+        parent::detalhes();
+        echo "<br> Potencia: " . $this->potencia . "<br>";
     }
 }
