@@ -17,7 +17,7 @@ class Eletrodomesticos extends Produto
 
     public function detalhes(): void
     {
-        echo "Nome do produto: " . $this->titulo . "<br>";
-        echo "Voltagem: " . $this->voltagem;
+        parent::detalhes();
+        echo "<br> Voltagem: " . $this->voltagem . "<br>";
     }
 }
