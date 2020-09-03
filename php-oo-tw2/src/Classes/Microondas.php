@@ -4,7 +4,7 @@
 namespace App\Classes;
 
 
-class Microondas extends Eletrodomesticos
+final class Microondas extends Eletrodomesticos
 {
     public int $potencia;
 
