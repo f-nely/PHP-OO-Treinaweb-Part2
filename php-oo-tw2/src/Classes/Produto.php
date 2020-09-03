@@ -5,7 +5,7 @@ class Produto
 {
     public string $titulo;
 
-    public string $descricao = "Cerveja Brasileira";
+    public string $descricao = "Produtos em geral";
 
     public float $preco;
 
