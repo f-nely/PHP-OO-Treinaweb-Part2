@@ -34,5 +34,6 @@ class Eletrodomesticos extends Produto
         parent::detalhes();
         echo "<br> Voltagem: " . $this->voltagem . "<br>";
         echo "<br> Preço: " . $this->preco . "<br>";
+        echo "<br> Decrição: " . $this->descricao . "<br>";
     }
 }
