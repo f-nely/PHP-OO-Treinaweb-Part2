@@ -17,6 +17,11 @@ class Eletrodomesticos extends Produto
         $this->defineVoltagem($voltagem);
     }
 
+    public function definePreco(float $preco): void
+    {
+        $this->preco = $preco;
+    }
+
     public function defineVoltagem(int $voltagem): void
     {
         if ($voltagem === 110 || $voltagem === 220) {
@@ -28,5 +33,6 @@ class Eletrodomesticos extends Produto
     {
         parent::detalhes();
         echo "<br> Voltagem: " . $this->voltagem . "<br>";
+        echo "<br> Preço: " . $this->preco . "<br>";
     }
 }
