@@ -3,7 +3,7 @@
 namespace App\Classes;
 class Produto
 {
-    public string $titulo;
+    private string $titulo;
 
     public string $descricao = "Produtos em geral";
 
