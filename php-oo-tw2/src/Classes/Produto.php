@@ -7,7 +7,7 @@ class Produto
 
     public string $descricao = "Produtos em geral";
 
-    public float $preco;
+    protected float $preco;
 
     public function __construct(string $titulo)
     {
