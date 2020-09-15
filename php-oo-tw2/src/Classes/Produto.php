@@ -9,6 +9,8 @@ class Produto
 
     protected float $preco;
 
+    private string $codigoBarras;
+
     public function __construct(string $titulo)
     {
         $this->titulo = $titulo;
@@ -22,6 +24,14 @@ class Produto
     public function acessaCodigoBarras(): string
     {
         return $this->codigoBarras;
+    }
+
+    public function definePreco(float $preco): void
+    {
+        if ($preco > 0) {
+            $this->preco = $preco;
+        }
+        return;
     }
 
     public function detalhes(): void
