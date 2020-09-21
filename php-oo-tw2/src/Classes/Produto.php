@@ -16,6 +16,11 @@ class Produto
         $this->titulo = $titulo;
     }
 
+    public function defineTitulo(string $titulo): string
+    {
+        $this->titulo = $titulo;
+    }
+
     final public function defineCodigoBarras(string $codigo): void
     {
         $this->codigoBarras = $codigo; //Propriedade em tempo de execução
