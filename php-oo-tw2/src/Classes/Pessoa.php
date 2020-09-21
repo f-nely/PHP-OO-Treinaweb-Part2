@@ -6,6 +6,8 @@ namespace App\Classes;
 
 abstract class Pessoa
 {
+    protected int $id;
+
     private string $nome;
 
     private string $endereco;
@@ -14,6 +16,7 @@ abstract class Pessoa
 
     private string $telefone;
 
+    abstract public function setId(int $id): void;
 
     public function getNome(): string
     {
@@ -58,3 +61,5 @@ abstract class Pessoa
 
 
 }
+
+php-oo-tw2/src/Classes/Pessoa.php
