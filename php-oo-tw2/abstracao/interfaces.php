@@ -8,4 +8,4 @@ $produto = new App\Classes\Produto("Beer");
 $produto->defineCodigoBarras("00022");
 $produto->definePreco(10);
 
-$produto->detalhes();
+echo $produto->retornaDetalhes();
