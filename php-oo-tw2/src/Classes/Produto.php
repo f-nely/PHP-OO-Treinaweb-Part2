@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Classes;
-class Produto
+
+use App\Interfaces\Imprimivel;
+
+class Produto implements Imprimivel
 {
     private string $titulo;
 
@@ -26,9 +29,9 @@ class Produto
         $this->codigoBarras = $codigo; //Propriedade em tempo de execução
     }
 
-    public function acessaCodigoBarras(): string
+    public function acessaCodigoBarras(): void
     {
-        return $this->codigoBarras;
+        echo "<br>Codigo de barras do produto: " . $this->codigoBarras;
     }
 
     public function definePreco(float $preco): void
@@ -42,5 +45,8 @@ class Produto
     public function detalhes(): void
     {
         echo "<br>Nome do produto: " . $this->titulo . "<br>";
+        echo "<br>Preço do produto: " . $this->preco . "<br>";
+        echo "<br>Descrição do produto: " . $this->descricao . "<br>";
+        $this->acessaCodigoBarras();
     }
 }
