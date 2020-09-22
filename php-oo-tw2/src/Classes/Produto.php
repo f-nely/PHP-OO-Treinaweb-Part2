@@ -3,8 +3,9 @@
 namespace App\Classes;
 
 use App\Interfaces\Imprimivel;
+use App\Interfaces\Retornavel;
 
-class Produto implements Imprimivel
+class Produto implements Imprimivel, Retornavel
 {
     private string $titulo;
 
@@ -29,9 +30,9 @@ class Produto implements Imprimivel
         $this->codigoBarras = $codigo; //Propriedade em tempo de execução
     }
 
-    public function acessaCodigoBarras(): void
+    public function acessaCodigoBarras(): string
     {
-        echo "<br>Codigo de barras do produto: " . $this->codigoBarras;
+        return "<br>Codigo de barras do produto: " . $this->codigoBarras;
     }
 
     public function definePreco(float $preco): void
@@ -47,6 +48,15 @@ class Produto implements Imprimivel
         echo "<br>Nome do produto: " . $this->titulo . "<br>";
         echo "<br>Preço do produto: " . $this->preco . "<br>";
         echo "<br>Descrição do produto: " . $this->descricao . "<br>";
-        $this->acessaCodigoBarras();
+        echo $this->acessaCodigoBarras();
+    }
+
+    public function retornaDetalhes(): string
+    {
+        $saida = "<br>Nome do produto: " . $this->titulo . "<br>";
+        $saida = $saida . "<br>Preço do produto: " . $this->preco . "<br>";
+        $saida = $saida . "<br>Descrição do produto: " . $this->descricao . "<br>";
+        $saida = $saida . $this->acessaCodigoBarras();
+        return $saida;
     }
 }
