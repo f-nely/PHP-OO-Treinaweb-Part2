@@ -22,7 +22,7 @@ $prod2->definePreco(1.90);
 var_dump($prod1, $prod2);
 
 $cli = new Cliente("Victor", "xxxxx-xxxx", 2);
-$cli->endereco = "São Paulo";
+$cli->setEndereco("São Paulo");
 $cli->compra();
 
 
