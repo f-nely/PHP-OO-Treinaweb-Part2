@@ -4,5 +4,5 @@ namespace App\Interfaces;
 
 Interface Retornavel
 {
-    public function RetornaDetalhes(): string;
+    public function retornaDetalhes(): string;
 }
