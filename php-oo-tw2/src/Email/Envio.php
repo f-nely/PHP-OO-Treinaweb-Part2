@@ -4,6 +4,7 @@ namespace App\Email;
 
 use App\Classes\Cliente;
 use App\Email\Adaptadores\AdaptadorBase;
+use App\Email\Adaptadores\AdaptadorInterface;
 use App\Email\Adaptadores\Mailgun\Adaptador as Mailgun;
 use App\Email\Adaptadores\Mailgun\Adaptador as SES;
 
@@ -11,7 +12,7 @@ const VERSION = 1.0;
 
 class Envio
 {
-    public function envia(AdaptadorBase $adaptador): void
+    public function envia(AdaptadorInterface $adaptador): void
     {
         $adaptador->processar();
 
