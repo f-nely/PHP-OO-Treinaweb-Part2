@@ -4,7 +4,7 @@
 namespace App\Email\Adaptadores;
 
 
-class AdaptadorBase
+class AdaptadorBase implements AdaptadorInterface
 {
     public function processar(): void
     {
