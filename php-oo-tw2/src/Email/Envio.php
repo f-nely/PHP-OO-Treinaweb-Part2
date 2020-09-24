@@ -3,6 +3,7 @@
 namespace App\Email;
 
 use App\Classes\Cliente;
+use App\Email\Adaptadores\AdaptadorBase;
 use App\Email\Adaptadores\Mailgun\Adaptador as Mailgun;
 use App\Email\Adaptadores\Mailgun\Adaptador as SES;
 
@@ -10,19 +11,10 @@ const VERSION = 1.0;
 
 class Envio
 {
-    public function envia(): void
+    public function envia(AdaptadorBase $adaptador): void
     {
-        //namaspace relativo
-        $adaptador = new Mailgun;
+        $adaptador->processar();
 
-        $transporte = new Transporte();
-
-        //namespace global
-        $obj = new \stdClass();
-
-        $customer = new Cliente();
-
-        var_dump($adaptador, $transporte, $obj, $customer);
     }
 
     public function m1()
