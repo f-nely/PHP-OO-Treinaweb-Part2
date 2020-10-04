@@ -8,6 +8,6 @@ var_dump(Vendedor::$bonus);
 
 Vendedor::$bonus = 1.5;
 
-echo Vendedor::comisao(true);
+echo Vendedor::calculaComissa(true, 100_000);
 
 var_dump(Vendedor::$bonus);
