@@ -6,10 +6,11 @@ namespace App\Classes;
 
 class Vendedor
 {
-    static public float $bonus = 1.2;
-    static public float $comissao = 2.5;
+    private $totalVendas = 0;
+    protected static float $bonus = 1.2;
+    protected static float $comissao = 2.5;
 
-    static public function comissao(bool $temBonus): float
+    private static function comissao(bool $temBonus): float
     {
         if ($temBonus) {
             return self::$comissao * self::$bonus;
@@ -18,10 +19,20 @@ class Vendedor
         return self::$comissao;
     }
 
-    static public function calculaComissa(bool $temBonus, float $valor): float
+    public static function calculaComissa(bool $temBonus, float $valor): float
     {
         $porcentagemComissao = static::comissao($temBonus) / 100;
 
         return $porcentagemComissao * $valor;
+    }
+
+    public function addVenda(float $valor): void
+    {
+        $this->totalVendas += $valor;
+    }
+
+    public function minhaComissao(): float
+    {
+        return static::calculaComissa(true ,$this->totalVendas);
     }
 }
